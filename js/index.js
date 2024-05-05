@@ -63,7 +63,8 @@ function setup(){
 function count(){
   let now = new Date();
   let difference = getTimeDifference(now, date);;
-  if (isEmpty(difference)){
+  if (isEmpty(difference) || overshot(now,date)){
+    document.getElementById("time").innerHTML = "00:00:00.000";
     clearInterval(intervalID);
   }
   let text = "";
@@ -220,4 +221,10 @@ function isEmpty(dic){
   && dic["minutes"] == 0 
   && dic["seconds"] == 0
   && dic["milliseconds"] == 0;
+}
+function overshot(now, date) {
+  let nowTime = now.getTime();
+  let dateTime = date.getTime();
+
+  return nowTime > dateTime;
 }
