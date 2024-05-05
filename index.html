@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" id="htm">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown</title>
+    <link rel="icon" type="image/x-icon" href="/img/hourglass.png">
+    <link rel="stylesheet" href="css/index.css"> 
+</head>
+<body>
+    <div id="superLoc">
+        <div id="setup" style="all:unset;">
+            <div id="timeLoc">
+                <div class="timeDiv" id="dateDiv">
+                    <input type="date" name="date" class="input" id="dateInput"/>
+                </div>
+                <div class="timeDiv" id="timeDiv">
+                    <input type="time" name="time" class="input" id="timeInput"/>
+                </div>
+            </div>
+            <br>
+            <div id="startDiv">
+                <button class="input" id="sumbit" onclick="setup()">start</button>
+            </div>
+        </div>
+        <div id="countdownSuper" style="display:none;">
+            <div id="backgroundTime">
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
