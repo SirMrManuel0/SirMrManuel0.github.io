@@ -105,7 +105,7 @@ function count(){
   if (difference["seconds"] < 10){
     text += "0";
     if (difference["seconds"] == 0){
-      text += "0:";
+      text += "0.";
     } else {
       text += difference["seconds"] + ".";
     }
