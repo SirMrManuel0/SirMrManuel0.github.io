@@ -23,15 +23,15 @@ function start(){
   document.getElementById("backgroundTime").style.display = "flex";
 
   let superLoc = document.getElementById("superLoc").style;
-  superLoc.width = "30vw";
-  superLoc.height = "20vh";
+  superLoc.width = "95vw";
+  superLoc.height = "60vh";
 
   let htmlStyle = document.getElementById("htm").style;
-  htmlStyle.width = "97%";
+  htmlStyle.width = "100%";
   htmlStyle.height = "95%";
 
   let countdown = document.getElementById("time");
-  countdown.innerHTML = "yyyy:mm:dd:hh:mm:ss. mmm";
+  countdown.innerHTML = "yyyy:mm:dd:hh:mm:ss.mmm";
 
   scaleFontSize();
 
@@ -105,7 +105,7 @@ function count(){
   if (difference["seconds"] < 10){
     text += "0";
     if (difference["seconds"] == 0){
-      text += "0:";
+      text += "0.";
     } else {
       text += difference["seconds"] + ".";
     }
@@ -176,7 +176,7 @@ function scaleFontSize() {
   let containerWidth = document.getElementById('backgroundTime').offsetWidth;
   let text = document.getElementById('time');
   
-  let ratio = (containerWidth / text.offsetWidth) * 2;
+  let ratio = (containerWidth / text.offsetWidth) * 4;
   //let ratio = 1.3;
   
   let newSize = Math.floor(parseFloat(window.getComputedStyle(text, null).getPropertyValue('font-size')) * ratio);
@@ -192,7 +192,7 @@ function getTimeDifference(start, end) {
   // Calculate days
   var days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
   // Calculate months
-  var months = Math.floor(days / 30.44); // Approximate months per year
+  var months = Math.floor(days / 30); // Approximate months per year
   // Calculate hours
   var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   // Calculate minutes
@@ -201,6 +201,8 @@ function getTimeDifference(start, end) {
   var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
   // Remaining milliseconds
   var milliseconds = timeDiff % 1000;
+
+  days -= months * 30;
 
   return {
       years: years,

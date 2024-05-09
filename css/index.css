@@ -1,6 +1,6 @@
 html{
-    height: 82%;
-    width: 82%;
+    height: 86%;
+    width: 86%;
 }
 body{
     background-color: #FAEDCD;
@@ -18,7 +18,7 @@ body{
 }   
 #superLoc{
     margin: auto;
-    width: 50%;
+    width: 100%;
 }
 #countdownSuper{
     width: 100%;
@@ -38,4 +38,9 @@ body{
     color: #CCD5AE;
     text-align: center;
     width: 100%;
+}
+.input{
+    width: 100%;
+    font-size: 20px;
+    height: 4vh;
 }
